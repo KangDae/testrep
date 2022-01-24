@@ -36,7 +36,7 @@ public class MainServer {
 			conn = DriverManager.getConnection(url, user, password);
 
 			ss = new ServerSocket(9500);
-			System.out.println("�����غ�Ϸ�");
+			System.out.println("서버 준비 완료");
 
 			allUserList = new ArrayList<MainHandler>();  //전체 사용자
 			WaitUserList = new ArrayList<MainHandler>(); //대기실 사용자

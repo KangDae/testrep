@@ -68,7 +68,7 @@ public class MainHandler extends Thread {
 				{
 					String userContent[] = line[1].split("%");
 
-					String sql = "Insert into UserContent values(num.nextval,?,?,?,?,?,?)";
+					String sql = "Insert into UserContent values(nextval(num),?,?,?,?,?,?)";
 					pstmt = conn.prepareStatement(sql);
 					pstmt.setString(1, userContent[0]);
 					pstmt.setString(2, userContent[1]);
@@ -286,7 +286,7 @@ public class MainHandler extends Thread {
 					String sql = "";
 					Room tempRoom = new Room();
 					if (userContent.length == 5) { // 비공개방
-						sql = "Insert into Room values(num.nextval,?,?,?,?,?,?)";
+						sql = "Insert into Room values(nextval(num),?,?,?,?,?,?)";
 						pstmt = conn.prepareStatement(sql);
 
 						pstmt.setString(1, userContent[0]); // title
@@ -308,7 +308,7 @@ public class MainHandler extends Thread {
 								+ user.getIdName() + "' and  subject= '" + userContent[3] + "'";
 
 					} else { // 공개방
-						sql = "Insert into Room values(num.nextval,?,'',?,?,?,?)";
+						sql = "Insert into Room values(nextval(num),?,'',?,?,?,?)";
 						pstmt = conn.prepareStatement(sql);
 
 						pstmt.setString(1, userContent[0]); // title
