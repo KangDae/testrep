@@ -22,15 +22,15 @@ public class RoomMake extends JFrame {
 
 	public RoomMake() {
 
-		title = new JLabel("¹æÁ¦¸ñ :");
-		subject = new JLabel("¹æÁÖÁ¦ :");
-		pw = new JLabel("ºñ¹Ğ¹øÈ£ :");
-		num = new JLabel("ÀÎ¿ø¼ö :");
+		title = new JLabel("ë°©ì œëª© :");
+		subject = new JLabel("ë°©ì£¼ì œ :");
+		pw = new JLabel("ë¹„ë°€ë²ˆí˜¸ :");
+		num = new JLabel("ì¸ì›ìˆ˜ :");
 
 		tf = new JTextField(15);
 		pf = new JTextField(15);
 
-		String[] com = { "°æ¿µ", "¸¶ÄÉÆÃ", "°í°´°ü¸®", "°³¹ß", "µğÀÚÀÎ" };
+		String[] com = { "ê²½ì˜", "ë§ˆì¼€íŒ…", "ê³ ê°ê´€ë¦¬", "ê°œë°œ", "ë””ìì¸" };
 		combo = new JComboBox<String>(com);
 
 		cb = new JCheckBox();
@@ -38,8 +38,8 @@ public class RoomMake extends JFrame {
 		String[] com1 = { "2", "3", "4", "5", "6", "7", "8", "9", };
 		combo1 = new JComboBox<String>(com1);
 
-		makeB = new JButton("¸¸µé±â");
-		canB = new JButton("Ãë ¼Ò");
+		makeB = new JButton("ë§Œë“¤ê¸°");
+		canB = new JButton("ì·¨ ì†Œ");
 
 		JPanel panel1 = new JPanel(new FlowLayout(FlowLayout.CENTER));
 		panel1.add(title);

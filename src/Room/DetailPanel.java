@@ -14,10 +14,9 @@ import javax.swing.JPanel;
 import Action.Protocol;
 
 public class DetailPanel extends JPanel implements ActionListener {
-
-	public static String labelName[] = { "¹æ ¹øÈ£ :", "      ", "¹æ ÁÖÁ¦ :", "      ", "ÀÎ¿ø ¼ö : ", "      ", "¹æ Á¦¸ñ : ",
+	public static String labelName[] = { "ë°© ë²ˆí˜¸ :", "      ", "ë°© ì£¼ì œ :", "      ", "ì¸ì› ìˆ˜ : ", "      ", "ë°© ì œëª© : ",
 			"      ", "      " };
-	public JLabel labelArray[]; // 1(¹æ¹øÈ£),3(¹æÁÖÁ¦),5(ÀÎ¿ø¼ö),7(¹æÁ¦¸ñ)
+	public JLabel labelArray[]; // 1(ë°©ë²ˆí˜¸),3(ë°©ì£¼ì œ),5(ì¸ì›ìˆ˜),7(ë°©ì œëª©)
 	private JButton enterButton;
 
 	private BufferedReader br;
@@ -39,24 +38,24 @@ public class DetailPanel extends JPanel implements ActionListener {
 			this.add(labelArray[i]);
 		}
 
-		enterButton = new JButton("ÀÔ Àå");
+		enterButton = new JButton("ìž… ìž¥");
 		this.add(enterButton);
 		enterButton.addActionListener(this);
 	}
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		System.out.println("ÀÔÀå¹öÆ° ");
+		System.out.println("ìž…ìž¥ë²„íŠ¼ ");
 		if (e.getSource() == enterButton) {
 
 			String count[] = labelArray[5].getText().split("/");
 
 			if (count[0].compareTo(count[1]) == 0) {
-				JOptionPane.showMessageDialog(this, "ÀÎ¿ø¼ö ÃÊ°ú·Î µé¾î°¥ ¼ö ¾ø½À´Ï´Ù");
+				JOptionPane.showMessageDialog(this, "ì¸ì›ìˆ˜ ì´ˆê³¼ë¡œ ë“¤ì–´ê°ˆ ìˆ˜ ì—†ìŠµë‹ˆë‹¤");
 			} else {
-				// ¼­¹ö·Î ÀÔÀå¿äÃ» -> ·ë ID
+				// ì„œë²„ë¡œ ìž…ìž¥ìš”ì²­ -> ë£¸ ID
 				String line = "";
-				line += (Protocol.ENTERROOM + "|" + labelArray[1].getText()); // Pro + ¹æ¹øÈ£
+				line += (Protocol.ENTERROOM + "|" + labelArray[1].getText()); // Pro + ë°©ë²ˆí˜¸
 				pw.println(line);
 				pw.flush();
 			}

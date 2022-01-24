@@ -21,8 +21,7 @@ public class SendMail_update {
         p.put("mail.smtp.starttls.enable", "true");     
         p.put("mail.smtp.host", "smtp.naver.com");      
         p.put("mail.smtp.auth","true");                 
-        p.put("mail.smtp.port", "587");                 
-        p.put("mail.smtp.port", "587");                 
+        p.put("mail.smtp.port", "587");                               
         p.put("mail.smtp.ssl.protocols", "TLSv1.2");
        
            
@@ -38,7 +37,7 @@ public class SendMail_update {
             from = new InternetAddress("eownsl999@naver.com"); //발신 이메일
             
             msg.setFrom(from);
-            
+            	
             InternetAddress to = new InternetAddress(email);
             msg.setRecipient(Message.RecipientType.TO, to);// 수신이메일
             
@@ -72,7 +71,7 @@ class MyAuthentication extends Authenticator {
     public MyAuthentication(){
          
         String id = "eownsl999@naver.com";  //네이버 아이디
-        String pw = "password";        //비밀번호
+        String pw = "rkdeogns1!";        //비밀번호
  
         // ID�� ��й�ȣ�� �Է��Ѵ�.
         pa = new PasswordAuthentication(id, pw);

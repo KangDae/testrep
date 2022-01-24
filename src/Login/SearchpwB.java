@@ -34,7 +34,7 @@ public class SearchpwB extends JFrame implements ActionListener{
 	p2.add(nameL);
 	p2.add(nameT);
 	
-	String[]email= {"gagle.com","naveve.com"};
+	String[]email= {"google.com","naver.com"};
 	emailc=new JComboBox<String>(email);
 	emailL=new JLabel("이메일");
 	emailT=new JTextField(10);

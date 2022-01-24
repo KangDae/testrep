@@ -29,8 +29,8 @@ import CoControl.CoprocessFrame;
 import Room.RoomMake;
 
 /**
- * @author Çü°ï
- * @category ´ë±â½Ç ³»¿ë
+ * @author ï¿½ï¿½ï¿½ï¿½
+ * @category ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
  *
  */
 public class RoomFrame extends JFrame {
@@ -41,7 +41,7 @@ public class RoomFrame extends JFrame {
 	public JTextArea chatarea, usertxt;
 	public JTextField chattxt, tx1, tx2, tx3, tx4, tx5, tx6, tx7, tx8;
 	private JLabel la1, la2, la3, la4, la5, la6;
-	private String[] com = { "°æ¿µÁö¿ø", "¸¶ÄÉÆÃ", "°í°´°ü¸®", "°³¹ß", "µğÀÚÀÎ" };
+	private String[] com = { "ê²½ì˜ì§€ì›", "ë§ˆì¼€íŒ…", "ê³ ê°ê´€ë¦¬", "ê°œë°œ", "ë””ìì¸" };
 	private JList<String> entlist, frlist;
 	private EtchedBorder eb;
 	private JList<DetailPanel> list;
@@ -58,14 +58,14 @@ public class RoomFrame extends JFrame {
 		this.br = br;
 		this.pw = pw;
 
-		// »ó´Ü¹öÆ°
+		// ìƒë‹¨ë²„íŠ¼
 //		rmake = new RoomMake();
 		dp = new DetailPanel[100];
 		upP = new JPanel(new FlowLayout());
-		la6 = new JLabel("Á¤ ·Ä : ");
+		la6 = new JLabel("ì • ë ¬ : ");
 		sortCB = new JComboBox<String>(com);
 		sortCB.setPreferredSize(new Dimension(200, 30));
-		makeB = new JButton("¹æ ¸¸ µé ±â");
+		makeB = new JButton("ë°© ë§Œ ë“¤ ê¸°");
 		makeB.setPreferredSize(new Dimension(400, 30));
 		exitB = new JButton("exit");
 		exitB.setPreferredSize(new Dimension(200, 30));
@@ -74,12 +74,12 @@ public class RoomFrame extends JFrame {
 		upP.add(makeB);
 		upP.add(exitB);
 
-		// Ã¤ÆÃ¹æ ¸ñ·Ï
+		// ì±„íŒ…ë°© ëª©ë¡
 		roomP = new JPanel(new BorderLayout());
-		la4 = new JLabel("Ã¤ÆÃ¹æ ¸ñ·Ï");
-		la4.setFont(new Font("µ¸¿ò", Font.PLAIN, 20));
+		la4 = new JLabel("ì±„íŒ…ë°© ëª©ë¡");
+		la4.setFont(new Font("ë‹ì›€", Font.PLAIN, 20));
 
-		centerPanel = new JPanel(new GridLayout(100, 2, 10, 10)); // 100°³
+		centerPanel = new JPanel(new GridLayout(100, 2, 10, 10)); // 100ê°œ
 		for (int i = 0; i < 100; i++) {
 			dp[i] = new DetailPanel(br, pw);
 			centerPanel.add(dp[i]);
@@ -93,10 +93,10 @@ public class RoomFrame extends JFrame {
 		roomP.add("Center", scrollRoomList);
 		roomP.add("North", la4);
 
-		// ´ë±âÀÚ Ã¤ÆÃ¸ñ·Ï
+		// ëŒ€ê¸°ì ì±„íŒ…ëª©ë¡
 		chatP = new JPanel(new BorderLayout());
-		la1 = new JLabel("´ë±âÀÚ Ã¤ÆÃ¹æ ");
-		la1.setFont(new Font("µ¸¿ò", Font.PLAIN, 15));
+		la1 = new JLabel("ëŒ€ê¸°ì ì±„íŒ…ë°© ");
+		la1.setFont(new Font("ë‹ì›€", Font.PLAIN, 15));
 		chatarea = new JTextArea();
 		chatarea.setEditable(false);
 		JScrollPane scroll = new JScrollPane(chatarea);
@@ -109,7 +109,7 @@ public class RoomFrame extends JFrame {
 		chatP1 = new JPanel(new FlowLayout(FlowLayout.LEFT));
 
 		chattxt = new JTextField(30);
-		sendB = new JButton("º¸³»±â");
+		sendB = new JButton("ë³´ë‚´ê¸°");
 
 		chatP1.add(chattxt);
 		chatP1.add(sendB);
@@ -118,12 +118,12 @@ public class RoomFrame extends JFrame {
 		chatP.add("South", chatP1);
 		chatP.add("North", la1);
 
-		// Ã¤ÆÃ´ë±âÀÚ ¸ñ·Ï
+		// ì±„íŒ…ëŒ€ê¸°ì ëª©ë¡
 		listP = new JPanel(new GridLayout(2, 1, 20, 20));
 
 		list1P = new JPanel(new BorderLayout());
-		la2 = new JLabel(" ´ë±â½Ç ÀÎ¿ø  ");
-		la2.setFont(new Font("µ¸¿ò", Font.PLAIN, 15));
+		la2 = new JLabel(" ëŒ€ê¸°ì‹¤ ì¸ì›  ");
+		la2.setFont(new Font("ë‹ì›€", Font.PLAIN, 15));
 
 		usertxt = new JTextArea();
 		usertxt.setEditable(false);
@@ -138,8 +138,8 @@ public class RoomFrame extends JFrame {
 		list2P = new JPanel(new BorderLayout());
 		list2P.setBorder(BorderFactory.createEmptyBorder(0, 0, 20, 0));
 
-		la3 = new JLabel(" Ä£ ±¸ ¸ñ ·Ï");
-		la3.setFont(new Font("µ¸¿ò", Font.PLAIN, 15));
+		la3 = new JLabel(" ì¹œ êµ¬ ëª© ë¡");
+		la3.setFont(new Font("ë‹ì›€", Font.PLAIN, 15));
 		frlist = new JList<String>(new DefaultListModel<String>());
 		JScrollPane scroll2 = new JScrollPane(frlist);
 		scroll2.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
@@ -151,13 +151,13 @@ public class RoomFrame extends JFrame {
 		listP.add(list1P);
 		listP.add(list2P);
 
-		// ´ë±âÀÚ¸ñ·Ï +´ë±âÀÚÃ¤ÆÃ
+		// ëŒ€ê¸°ìëª©ë¡ +ëŒ€ê¸°ìì±„íŒ…
 		sumP = new JPanel(new BorderLayout());
 
 		sumP.add("Center", listP);
 		sumP.add("South", chatP);
 
-		// Á¾ÇÕ
+		// ì¢…í•©
 		Container contentPane = this.getContentPane();
 		contentPane.add("East", sumP);
 		contentPane.add("North", upP);
@@ -167,7 +167,7 @@ public class RoomFrame extends JFrame {
 		setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
 
 
-	}// »ı¼ºÀÚ
+	}// ìƒì„±ì
 
 	public void containPanelClear() {
 
