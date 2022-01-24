@@ -1,0 +1,20 @@
+JAVA STUDT
+
+package Action;
+
+import Login.EnterFrame;
+
+/**
+ * 
+ * @category Main tkd456
+ */
+public class MainClient {
+
+	public static void main(String[] args) {
+		new EnterFrame();
+	}
+}
+
+
+내용을 분석해보아요~~~~~
+
