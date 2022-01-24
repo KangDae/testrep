@@ -1,70 +1,70 @@
 package Action;
 
 public class Protocol {
-	public static final String REGISTER = "100"; // È¸¿ø°¡ÀÔ(request)
+	public static final String REGISTER = "100"; // íšŒì›ê°€ì…(request)
 
-	public static final String IDSEARCH = "110"; // IDÃ£±â Join (request)
+	public static final String IDSEARCH = "110"; // IDì°¾ê¸° Join (request)
 
-	public static final String IDSEARCH_OK = "111"; // IDÃ£±â (±âÁ¸¿¡ ÀÖ´Â°Å) (ACK)
+	public static final String IDSEARCH_OK = "111"; // IDì°¾ê¸° (ê¸°ì¡´ì— ìˆëŠ”ê±°) (ACK)
 
-	public static final String IDSEARCH_NO = "112"; // IDÃ£±â (±âÁ¸¿¡ ¾øÀ½) (NACK)
+	public static final String IDSEARCH_NO = "112"; // IDì°¾ê¸° (ê¸°ì¡´ì— ì—†ìŒ) (NACK)
 
-	public static final String IDSEARCHCHECK = "113"; // (using È¸¿ø°¡ÀÔ)IDÃ£±â Áßº¹È®ÀÎ(request)
+	public static final String IDSEARCHCHECK = "113"; // (using íšŒì›ê°€ì…)IDì°¾ê¸° ì¤‘ë³µí™•ì¸(request)
 
-	public static final String IDSEARCHCHECK_OK = "114"; // (using È¸¿ø°¡ÀÔ)ID Áßº¹È®ÀÎ (»ç¿ë°¡´É) (ACK)
+	public static final String IDSEARCHCHECK_OK = "114"; // (using íšŒì›ê°€ì…)ID ì¤‘ë³µí™•ì¸ (ì‚¬ìš©ê°€ëŠ¥) (ACK)
 
-	public static final String IDSEARCHCHECK_NO = "115"; // (using È¸¿ø°¡ÀÔ)ID Áßº¹È®ÀÎ (»ç¿ë ºÒ°¡´É) (NACK)
+	public static final String IDSEARCHCHECK_NO = "115"; // (using íšŒì›ê°€ì…)ID ì¤‘ë³µí™•ì¸ (ì‚¬ìš© ë¶ˆê°€ëŠ¥) (NACK)
 
-	public static final String ENTERLOGIN = "120"; // ·Î±×ÀÎ(request)
+	public static final String ENTERLOGIN = "120"; // ë¡œê·¸ì¸(request)
 
-	public static final String ENTERLOGIN_OK = "121"; // ·Î±×ÀÎ ¼º°ø(ACK)
+	public static final String ENTERLOGIN_OK = "121"; // ë¡œê·¸ì¸ ì„±ê³µ(ACK)
 
-	public static final String ENTERLOGIN_NO = "122"; // ·Î±×ÀÎ ½ÇÆĞ(NACK)
+	public static final String ENTERLOGIN_NO = "122"; // ë¡œê·¸ì¸ ì‹¤íŒ¨(NACK)
 
-	public static final String PWSEARCH = "130"; // PWÃ£±â
+	public static final String PWSEARCH = "130"; // PWì°¾ê¸°
 
-	public static final String ROOMMAKE = "200"; // ¹æ¸¸µé±â
+	public static final String ROOMMAKE = "200"; // ë°©ë§Œë“¤ê¸°
 
-	public static final String ROOMMAKE_OK = "201"; // ¹æ¸¸µé±â_ACK
+	public static final String ROOMMAKE_OK = "201"; // ë°©ë§Œë“¤ê¸°_ACK
 
-	public static final String ROOMMAKE_OK1 = "202"; // ¹æ¸¸µé±â_ACK(¸¸µç»ç¶÷¿¡°Ô)
+	public static final String ROOMMAKE_OK1 = "202"; // ë°©ë§Œë“¤ê¸°_ACK(ë§Œë“ ì‚¬ëŒì—ê²Œ)
 
-	public static final String ROOMSORT = "210"; // ¹æÁ¤·Ä
+	public static final String ROOMSORT = "210"; // ë°©ì •ë ¬
 
-	public static final String EXITWAITROOM = "220"; // ´ë±â¹æ ³ª°¡±â(= logout)
+	public static final String EXITWAITROOM = "220"; // ëŒ€ê¸°ë°© ë‚˜ê°€ê¸°(= logout)
 
-	public static final String SENDWAITROOM = "250"; // ´ë±â¹æ ¸Ş¼¼Áö
+	public static final String SENDWAITROOM = "250"; // ëŒ€ê¸°ë°© ë©”ì„¸ì§€
 
-	public static final String ENTERROOM = "300"; // ¹æÀÔÀå
+	public static final String ENTERROOM = "300"; // ë°©ì…ì¥
 
-	public static final String ENTERROOM_OK = "301"; // ¹æÀÔÀå ¼º°ø
+	public static final String ENTERROOM_OK = "301"; // ë°©ì…ì¥ ì„±ê³µ
 
-	public static final String ENTERROOM_OK1 = "302"; // ¹æÀÔÀå ¼º°ø //ÀÔÀåÇÏ´Â ´ç»çÀÚ
+	public static final String ENTERROOM_OK1 = "302"; // ë°©ì…ì¥ ì„±ê³µ //ì…ì¥í•˜ëŠ” ë‹¹ì‚¬ì
 
-	public static final String ENTERROOM_NO = "303"; // ¹æÀÔÀå ½ÇÆĞ
+	public static final String ENTERROOM_NO = "303"; // ë°©ì…ì¥ ì‹¤íŒ¨
 
-	public static final String ENTERROOM_USERLISTSEND = "305"; // ¹æ¿¡ À¯ÀúµéÀ» º¸³»ÁÜ
+	public static final String ENTERROOM_USERLISTSEND = "305"; // ë°©ì— ìœ ì €ë“¤ì„ ë³´ë‚´ì¤Œ
 
-	public static final String EXITCHATTINGROOM = "310"; // ¹æ³ª°¡±â (Ã¤ÆÃ¹æ ³ª°¡±â)
+	public static final String EXITCHATTINGROOM = "310"; // ë°©ë‚˜ê°€ê¸° (ì±„íŒ…ë°© ë‚˜ê°€ê¸°)
 
-	public static final String SENDMESSAGE = "400"; // ¸Ş¼¼Áö º¸³»±â
+	public static final String SENDMESSAGE = "400"; // ë©”ì„¸ì§€ ë³´ë‚´ê¸°
 
-	public static final String SENDMESSAGE_ACK = "410"; // ¸Ş¼¼Áö º¸³»±â(´äÀå)
+	public static final String SENDMESSAGE_ACK = "410"; // ë©”ì„¸ì§€ ë³´ë‚´ê¸°(ë‹µì¥)
 
-	public static final String CHATTINGSENDMESSAGE = "420"; // Ã¤ÆÃ¹æ¿¡¼­ ¸Ş¼¼Áö º¸³»±â (Request)
+	public static final String CHATTINGSENDMESSAGE = "420"; // ì±„íŒ…ë°©ì—ì„œ ë©”ì„¸ì§€ ë³´ë‚´ê¸° (Request)
 
-	public static final String CHATTINGSENDMESSAGE_OK = "430"; // Ã¤ÆÃ¹æ¿¡¼­ ¸Ş¼¼Áö º¸³»±â (Request)
+	public static final String CHATTINGSENDMESSAGE_OK = "430"; // ì±„íŒ…ë°©ì—ì„œ ë©”ì„¸ì§€ ë³´ë‚´ê¸° (Request)
 
-	public static final String CHATTINGFILESEND_SYN = "500"; // ÆÄÀÏÀü¼Û1
+	public static final String CHATTINGFILESEND_SYN = "500"; // íŒŒì¼ì „ì†¡1
 
-	public static final String CHATTINGFILESEND_SYNACK = "510"; // ÆÄÀÏÀü¼Û2
+	public static final String CHATTINGFILESEND_SYNACK = "510"; // íŒŒì¼ì „ì†¡2
 
-	public static final String CHATTINGFILESEND_FILE = "520"; // ÆÄÀÏÀü¼Û3
+	public static final String CHATTINGFILESEND_FILE = "520"; // íŒŒì¼ì „ì†¡3
 
-	public static final String CHATTINGFILESEND_FILEACK = "530"; // ÆÄÀÏÀü¼Û4
+	public static final String CHATTINGFILESEND_FILEACK = "530"; // íŒŒì¼ì „ì†¡4
 
-	public static final String CHATTINGFILEDOWNLOAD_SYN = "550"; // ÆÄÀÏ ´Ù¿î·Îµå1
+	public static final String CHATTINGFILEDOWNLOAD_SYN = "550"; // íŒŒì¼ ë‹¤ìš´ë¡œë“œ1
 
-	public static final String CHATTINGFILEDOWNLOAD_SEND = "560"; // ÆÄÀÏ º¸³¿
+	public static final String CHATTINGFILEDOWNLOAD_SEND = "560"; // íŒŒì¼ ë³´ëƒ„"560"; // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 
 }

@@ -21,7 +21,7 @@ public class Room {
 		this.userCount = "";
 		this.masterName = "";
 		this.subject = "";
-		this.condtionP = 0; // 공개방 0, 비공개 1
+		this.condtionP = 0; 
 		roomInUserList = new ArrayList<MainHandler>();
 	}
 

@@ -13,43 +13,45 @@ import javax.mail.internet.MimeMessage;
  
 public class SendMail_update {
  
-    public static int sendmail(String email) {
+    public static int SendMail(String email) {
     	
     	int number = 0;
          
         Properties p = System.getProperties();
-        p.put("mail.smtp.starttls.enable", "true");     // gmailÀº true °íÁ¤
-        p.put("mail.smtp.host", "smtp.naver.com");      // smtp ¼­¹ö ÁÖ¼Ò
-        p.put("mail.smtp.auth","true");                 // gmailÀº true °íÁ¤
-        p.put("mail.smtp.port", "587");                 // ³×ÀÌ¹ö Æ÷Æ®
-        p.put("mail.smtp.port", "587");                 // ³×ÀÌ¹ö Æ÷Æ®
+        p.put("mail.smtp.starttls.enable", "true");     
+        p.put("mail.smtp.host", "smtp.naver.com");      
+        p.put("mail.smtp.auth","true");                 
+        p.put("mail.smtp.port", "587");                 
+        p.put("mail.smtp.port", "587");                 
         p.put("mail.smtp.ssl.protocols", "TLSv1.2");
        
            
         Authenticator auth = new MyAuthentication();
-        //session »ı¼º ¹×  MimeMessage»ı¼º
+      
         Session session = Session.getDefaultInstance(p, auth);
         MimeMessage msg = new MimeMessage(session);
          
         try{
-            //ÆíÁöº¸³½½Ã°£
+           
             msg.setSentDate(new Date());
             InternetAddress from = new InternetAddress() ;
-            from = new InternetAddress("eownsl999@naver.com"); //¹ß½ÅÀÚ ¾ÆÀÌµğ
-            // ÀÌ¸ŞÀÏ ¹ß½ÅÀÚ
-            msg.setFrom(from);
-            // ÀÌ¸ŞÀÏ ¼ö½ÅÀÚ
-            InternetAddress to = new InternetAddress("eownsl999@naver.com");
-            msg.setRecipient(Message.RecipientType.TO, to);
-            // ÀÌ¸ŞÀÏ Á¦¸ñ
-            msg.setSubject("[TEST]ÀÎÁõ¹øÈ£ÀÔ´Ï´Ù.", "UTF-8");
-            // ÀÌ¸ŞÀÏ ³»¿ë
+            from = new InternetAddress("eownsl999@naver.com"); //ë°œì‹  ì´ë©”ì¼
             
+            msg.setFrom(from);
+            
+            InternetAddress to = new InternetAddress(email);
+            msg.setRecipient(Message.RecipientType.TO, to);// ìˆ˜ì‹ ì´ë©”ì¼
+            
+            //ë©”ì¼ì œëª©
+            msg.setSubject("[TEST]ì¸ì¦ì½”ë“œì…ë‹ˆë‹¤", "UTF-8");
+            
+            
+            // ë©”ì¼ë‚´ìš©       
             number = (int)(Math.random()*9999)+1000;
-            msg.setText("ÀÎÁõ¹øÈ£ : " +number + "ÀÎÁõ¹øÈ£¸¦ ÀÔ·ÂÇØÁÖ¼¼¿ä!!", "UTF-8");
-            // ÀÌ¸ŞÀÏ Çì´õ
+            msg.setText("ì¸ì¦ë²ˆí˜¸ : " +number + " ì…ë ¥í•´ì£¼ì„¸ìš”", "UTF-8");
+           
             msg.setHeader("content-Type", "text/html");
-            //¸ŞÀÏº¸³»±â
+
             javax.mail.Transport.send(msg, msg.getAllRecipients());
              
         }catch (AddressException addr_e) {
@@ -69,14 +71,14 @@ class MyAuthentication extends Authenticator {
     PasswordAuthentication pa;
     public MyAuthentication(){
          
-        String id = "eownsl999@naver.com";  //³×ÀÌ¹ö ÀÌ¸ŞÀÏ ¾ÆÀÌµğ
-        String pw = "password";        //³×ÀÌ¹ö ºñ¹Ğ¹øÈ£
+        String id = "eownsl999@naver.com";  //ë„¤ì´ë²„ ì•„ì´ë””
+        String pw = "password";        //ë¹„ë°€ë²ˆí˜¸
  
-        // ID¿Í ºñ¹Ğ¹øÈ£¸¦ ÀÔ·ÂÇÑ´Ù.
+        // IDï¿½ï¿½ ï¿½ï¿½Ğ¹ï¿½È£ï¿½ï¿½ ï¿½Ô·ï¿½ï¿½Ñ´ï¿½.
         pa = new PasswordAuthentication(id, pw);
     }
  
-    // ½Ã½ºÅÛ¿¡¼­ »ç¿ëÇÏ´Â ÀÎÁõÁ¤º¸
+    // ï¿½Ã½ï¿½ï¿½Û¿ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ï´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
     public PasswordAuthentication getPasswordAuthentication() {
         return pa;
     }

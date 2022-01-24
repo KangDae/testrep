@@ -27,8 +27,8 @@ import javax.swing.JTextField;
 import javax.swing.ListSelectionModel;
 
 /**
- * @author ¼öº´
- * @category ¹æ ¼¼ºÎ³»¿ë
+ * @author ï¿½ï¿½ï¿½ï¿½
+ * @category ï¿½ï¿½ ï¿½ï¿½ï¿½Î³ï¿½ï¿½ï¿½
  *
  */
 
@@ -46,10 +46,10 @@ public class CoprocessFrame extends JFrame {
 
 	public CoprocessFrame() {
 
-		openB = new JButton("³»PC ÆÄÀÏ¿­±â");
-		saveB = new JButton("³»PC ÆÄÀÏÀúÀå");
-		loadB = new JButton("¾÷·Îµå");
-		exitB = new JButton("³ª°¡±â");
+		openB = new JButton("ë‚´PC íŒŒì¼ì—´ê¸°");
+		saveB = new JButton("ë‚´PC íŒŒì¼ì €ì¥");
+		loadB = new JButton("ì—…ë¡œë“œ");
+		exitB = new JButton("ë‚˜ê°€ê¸°");
 
 		openB.setEnabled(true);
 		saveB.setEnabled(true);
@@ -78,7 +78,7 @@ public class CoprocessFrame extends JFrame {
 		// *************************************************
 		JPanel epanel = new JPanel(new BorderLayout());
 		JPanel p1 = new JPanel();
-		JLabel user = new JLabel("                                   Âü¿© ÀÎ¿ø");
+		JLabel user = new JLabel("                                   ì°¸ì—¬ ì¸ì›");
 		p1.add(user);
 
 		partList = new JTextArea();
@@ -91,7 +91,7 @@ public class CoprocessFrame extends JFrame {
 
 		JPanel epanel1 = new JPanel(new BorderLayout());
 		JPanel p2 = new JPanel();
-		JLabel file = new JLabel("                               ¾÷·ÎµåÇÑ ÆÄÀÏ");
+		JLabel file = new JLabel("                               ì—…ë¡œë“œí•œ íŒŒì¼");
 		p2.add(file);
 
 		list2 = new JList<String>(new DefaultListModel<String>());
@@ -112,7 +112,7 @@ public class CoprocessFrame extends JFrame {
 		JPanel epanel3 = new JPanel(new BorderLayout());
 
 		JPanel p3 = new JPanel();
-		JLabel chat = new JLabel("                                        Ã¤ ÆÃ");
+		JLabel chat = new JLabel("                                        ì±„ íŒ…");
 		p3.add(chat);
 
 		area1 = new JTextArea();
@@ -143,7 +143,7 @@ public class CoprocessFrame extends JFrame {
 		setBounds(400, 200, 1000, 800);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 
-	}// »ı¼ºÀÚ
+	}// ìƒì„±ì
 
 	public void openDialog() {
 
@@ -156,7 +156,7 @@ public class CoprocessFrame extends JFrame {
 		}
 	}
 
-	public void fileRead() {// ±¸Çö
+	public void fileRead() {// êµ¬í˜„
 		if (file == null)
 			return;
 		area.setText("");
@@ -206,7 +206,7 @@ public class CoprocessFrame extends JFrame {
 				// System.out.println(contents[i].getName());
 			}
 		} else {
-			System.out.println("ÆÄÀÏÀÌ ¾ø½À´Ï´Ù.");
+			System.out.println("íŒŒì¼ì´ ì—†ìŠµë‹ˆë‹¤.");
 		}
 
 	}

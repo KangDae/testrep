@@ -11,10 +11,10 @@ import java.util.ArrayList;
 import DO.Room;
 
 public class MainServer {
-	private ServerSocket ss; // ¼­¹ö ¼ÒÄÏ
-	private ArrayList<MainHandler> allUserList; // ÀüÃ¼ »ç¿ëÀÚ
-	private ArrayList<MainHandler> WaitUserList; // ´ë±â½Ç »ç¿ëÀÚ
-	private ArrayList<Room> roomtotalList;// ÀüÃ¼ ¹æ¸®½ºÆ®
+	private ServerSocket ss; 
+	private ArrayList<MainHandler> allUserList; //ì „ì²´ ì‚¬ìš©ì
+	private ArrayList<MainHandler> WaitUserList;//ëŒ€ê¸°ì‹¤ ì‚¬ìš©ì
+	private ArrayList<Room> roomtotalList;//ì „ì²´ë°©ë¦¬ìŠ¤íŠ¸
 	
 	String protocol =  "jdbc:mariadb://";
 	String ip = "127.0.0.1";
@@ -33,18 +33,18 @@ public class MainServer {
 
 		try {
 			Class.forName(driver);
-			conn = DriverManager.getConnection(url, user, password); // DB ¿¬°á
+			conn = DriverManager.getConnection(url, user, password);
 
 			ss = new ServerSocket(9500);
-			System.out.println("¼­¹öÁØºñ¿Ï·á");
+			System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½Øºï¿½Ï·ï¿½");
 
-			allUserList = new ArrayList<MainHandler>(); // ÀüÃ¼ »ç¿ëÀÚ
-			WaitUserList = new ArrayList<MainHandler>(); // ´ë±â½Ç »ç¿ëÀÚ
-			roomtotalList = new ArrayList<Room>(); // ÀüÃ¼ ¹æ¸®½ºÆ®
+			allUserList = new ArrayList<MainHandler>();  //ì „ì²´ ì‚¬ìš©ì
+			WaitUserList = new ArrayList<MainHandler>(); //ëŒ€ê¸°ì‹¤ ì‚¬ìš©ì
+			roomtotalList = new ArrayList<Room>(); //ì „ì²´ ë°© ë¦¬ìŠ¤íŠ¸
 			while (true) {
 				Socket socket = ss.accept();
-				MainHandler handler = new MainHandler(socket, allUserList, WaitUserList, roomtotalList, conn);// ½º·¹µå »ı¼º
-				handler.start();// ½º·¹µå ½ÃÀÛ
+				MainHandler handler = new MainHandler(socket, allUserList, WaitUserList, roomtotalList, conn);// ìŠ¤ë ˆë“œ ìƒì„±
+				handler.start();// ìŠ¤ë ˆë“œ ì‹œì‘
 				allUserList.add(handler);
 			} // while
 		} catch (IOException io) {

@@ -13,20 +13,16 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-import FunctionTest.Email.SendMail;
+import FunctionTest.Email.SendMail_update;
 
 public class SearchidB extends JFrame  {
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
 	private JLabel nameL, emailL, emailadductionL, emailcomL, ageL, ageYearL, ageMonthL, ageDayL, phoneL;
 	JButton okpwB, joinB, cancelB, emeilokB, emailB;
 	JTextField newpwT, okpwT, nameT, idT, emailT, emailadductionT, tel2T, tel3T;
 	JComboBox<String> telC, emailC, ageYearC, ageMonthC, ageDayC;
 
 	public SearchidB() {
-		setTitle("¾ÆÀÌµğ Ã£±â");
+		setTitle("ì•„ì´ë”” ì°¾ê¸°");
 		String[] tel = { "010", "02", "031", "032", "033", "041", "042", "043", "044", "051", "052", "053", "054",
 				"055", "061", "062", "063", "064" };
 		String[] email = { "naver.com","google.com" };
@@ -43,17 +39,17 @@ public class SearchidB extends JFrame  {
 		ageMonthC = new JComboBox<String>(ageMonth);
 		ageDayC = new JComboBox<String>(ageDay);
 
-		nameL = new JLabel("ÀÌ¸§");
+		nameL = new JLabel("ì´ë¦„");
 		nameT = new JTextField(10);
 		JPanel p1 = new JPanel();
 		p1.add(nameL);
 		p1.add(nameT);
 
 		emailC = new JComboBox<String>(email);
-		emailL = new JLabel("ÀÌ¸ŞÀÏ");
+		emailL = new JLabel("ì´ë©”ì¼");
 		emailcomL = new JLabel("@");
 		emailT = new JTextField(10);
-		emailB = new JButton("ÀÎÁõ¹øÈ£ Àü¼Û");
+		emailB = new JButton("ì¸ì¦ë²ˆí˜¸ ì „ì†¡");
 		JPanel p2 = new JPanel();
 		p2.add(emailL);
 		p2.add(emailT);
@@ -61,10 +57,10 @@ public class SearchidB extends JFrame  {
 		p2.add(emailC);
 		p2.add(emailB);
 
-		ageL = new JLabel("»ı³â¿ùÀÏ");
-		ageYearL = new JLabel("³âµµ");
-		ageMonthL = new JLabel("¿ù");
-		ageDayL = new JLabel("ÀÏ");
+		ageL = new JLabel("ìƒë…„ì›”ì¼");
+		ageYearL = new JLabel("ë…„ë„");
+		ageMonthL = new JLabel("ì›”");
+		ageDayL = new JLabel("ì¼");
 		JPanel p3 = new JPanel();
 		p3.add(ageL);
 		p3.add(ageYearC);
@@ -74,7 +70,7 @@ public class SearchidB extends JFrame  {
 		p3.add(ageDayC);
 		p3.add(ageDayL);
 
-		phoneL = new JLabel("ÀüÈ­¹øÈ£");
+		phoneL = new JLabel("ì „í™”ë²ˆí˜¸");
 		tel2T = new JTextField(5);
 		tel3T = new JTextField(5);
 		JPanel p4 = new JPanel();
@@ -83,16 +79,16 @@ public class SearchidB extends JFrame  {
 		p4.add(tel2T);
 		p4.add(tel3T);
 
-		emailadductionL = new JLabel("ÀÎÁõ¹øÈ£");// email-ÀÎÁõ¹øÈ£
+		emailadductionL = new JLabel("ì¸ì¦ë²ˆí˜¸");// email-ì¸ì¦ë²ˆí˜¸
 		emailadductionT = new JTextField(10);
-		emeilokB = new JButton("È®ÀÎ");
+		emeilokB = new JButton("í™•ì¸");
 		JPanel p5 = new JPanel();
 		p5.add(emailadductionL);
 		p5.add(emailadductionT);
 		p5.add(emeilokB);
 
-		joinB = new JButton("È®ÀÎ");
-		cancelB = new JButton("Ãë¼Ò");
+		joinB = new JButton("í™•ì¸");
+		cancelB = new JButton("ì·¨ì†Œ");
 
 		JPanel p6 = new JPanel();
 		p6.add(joinB);

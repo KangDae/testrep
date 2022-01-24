@@ -20,40 +20,40 @@ public class SearchpwB extends JFrame implements ActionListener{
 	
 	
 	public SearchpwB() {
-	setTitle("ºñ¹Ğ¹øÈ£ Ã£±â");
-	idL=new JLabel("¾ÆÀÌµğ");
+	setTitle("ë¹„ë°€ë²ˆí˜¸ ì°¾ê¸°");
+	idL=new JLabel("ì•„ì´ë””");
 	idT=new JTextField(10);
 	JPanel p1=new JPanel();
 	p1.add(idL);
 	p1.add(idT);
 	
-	nameL=new JLabel("ÀÌ¸§");
+	nameL=new JLabel("ì´ë¦„");
 	nameT=new JTextField(5);
 	
 	JPanel p2=new JPanel();
 	p2.add(nameL);
 	p2.add(nameT);
 	
-	String[]email= {"google.com","naver.com"};
+	String[]email= {"gagle.com","naveve.com"};
 	emailc=new JComboBox<String>(email);
-	emailL=new JLabel("ÀÌ¸ŞÀÏ");
+	emailL=new JLabel("ì´ë©”ì¼");
 	emailT=new JTextField(10);
 	JPanel p3=new JPanel();
 	p3.add(emailL);
 	p3.add(emailT);
 	p3.add(emailc);
 	
-	emailadductionL=new JLabel("e-mail ÀÎÁõ¹øÈ£");
+	emailadductionL=new JLabel("e-mail ì¸ì¦ë²ˆí˜¸");
 	emailadductionT=new JTextField(10);
-	emailOkB=new JButton("ÀÎÁõÈ®ÀÎ");
+	emailOkB=new JButton("ì¸ì¦í™•ì¸");
 	JPanel p4=new JPanel();
 	p4.add(emailadductionL);
 	p4.add(emailadductionT);
 	p4.add(emailOkB);
 	
-	joinB=new JButton("È®ÀÎ");
-	cancleB=new JButton("Ãë¼Ò");
-	newpwB=new JButton("ºñ¹Ğ¹øÈ£ Àç¼³Á¤");
+	joinB=new JButton("í™•ì¸");
+	cancleB=new JButton("ì·¨ì†Œ");
+	newpwB=new JButton("ë¹„ë°€ë²ˆí˜¸ ì¬ì„¤ì •");
 	JPanel p5=new JPanel();
 	p5.add(joinB);
 	p5.add(cancleB);
@@ -84,5 +84,4 @@ public class SearchpwB extends JFrame implements ActionListener{
 			System.out.println("ddd");
 		}
 	}
-	
 }

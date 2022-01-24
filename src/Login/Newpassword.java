@@ -14,21 +14,21 @@ public class Newpassword extends JFrame{
 	JButton joinB,cancleB;
 	
 	public Newpassword() {
-		setTitle("ºñ¹Ğ¹øÈ£ ¼³Á¤");
-		newpwL =new JLabel("ºñ¹Ğ¹øÈ£");
+		setTitle("ë¹„ë°€ë²ˆí˜¸ ì„¤ì •");
+		newpwL =new JLabel("ë¹„ë°€ë²ˆí˜¸");
 		newpwT=new JTextField(10);
 		JPanel p1=new JPanel();
 		p1.add(newpwL);
 		p1.add(newpwT);
 		
-		okpwL=new JLabel("ºñ¹Ğ¹øÈ£ È®ÀÎ");
+		okpwL=new JLabel("ë¹„ë°€ë²ˆí˜¸ í™•ì¸");
 		okpwT=new JTextField(10);
 		JPanel p2=new JPanel();
 		p2.add(okpwL);
 		p2.add(okpwT);
 		
-		joinB=new JButton("È®ÀÎ");
-		cancleB=new JButton("Ãë¼Ò");
+		joinB=new JButton("í™•ì¸");
+		cancleB=new JButton("ì·¨ì†Œ");
 		JPanel p3=new JPanel();
 		p3.add(joinB);
 		p3.add(cancleB);

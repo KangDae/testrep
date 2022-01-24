@@ -14,10 +14,6 @@ import javax.swing.JTextField;
 import javax.swing.text.GapContent;
 
 public class MembershipB extends JFrame {
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
 	JPasswordField pwT;
 	JTextField nameT, idT, tel2T, tel3T, emailT, emailadductionT;
 	private JLabel nameL, idL, pwL, phoneL, ageL, ageYearL, ageMonthL, ageDayL, emailL, emailadductionL, emailcomL;;
@@ -25,7 +21,7 @@ public class MembershipB extends JFrame {
 	JComboBox<String> telC, emailC, ageYearC, ageMonthC, ageDayC;
 
 	public MembershipB() {
-		setTitle("È¸¿ø°¡ÀÔ");
+		setTitle("íšŒì›ê°€ì…");
 		String[] tel = { "010", "02", "031", "032", "033", "041", "042", "043", "044", "051", "052", "053", "054",
 				"055", "061", "062", "063", "064" };
 		String[] email = { "naver.com", "google.com" };
@@ -43,31 +39,31 @@ public class MembershipB extends JFrame {
 		ageMonthC = new JComboBox<String>(ageMonth);
 		ageDayC = new JComboBox<String>(ageDay);
 
-		nameL = new JLabel("ÀÌ¸§");
+		nameL = new JLabel("ì´ë¦„");
 		nameT = new JTextField(15);
 		JPanel p1 = new JPanel();
 		p1.add(nameL);
 		p1.add(nameT);
 
-		idL = new JLabel("¾ÆÀÌµğ");
+		idL = new JLabel("ì•„ì´ë””");
 		idT = new JTextField(15);
-		idoverlapB = new JButton("Áßº¹È®ÀÎ");
+		idoverlapB = new JButton("ì¤‘ë³µí™•ì¸");
 		JPanel p2 = new JPanel();
 		p2.add(idL);
 		p2.add(idT);
 		p2.add(idoverlapB);
 
-		pwL = new JLabel("ºñ¹Ğ¹øÈ£");
+		pwL = new JLabel("ë¹„ë°€ë²ˆí˜¸");
 		pwT = new JPasswordField(15);
 		pwT.setEchoChar('*');
 		JPanel p3 = new JPanel();
 		p3.add(pwL);
 		p3.add(pwT);
 
-		ageL = new JLabel("»ı³â¿ùÀÏ");
-		ageYearL = new JLabel("³âµµ");
-		ageMonthL = new JLabel("¿ù");
-		ageDayL = new JLabel("ÀÏ");
+		ageL = new JLabel("ìƒë…„ì›”ì¼");
+		ageYearL = new JLabel("ë…„ë„");
+		ageMonthL = new JLabel("ì›”");
+		ageDayL = new JLabel("ì¼");
 		JPanel p4 = new JPanel();
 		p4.add(ageL);
 		p4.add(ageYearC);
@@ -77,7 +73,7 @@ public class MembershipB extends JFrame {
 		p4.add(ageDayC);
 		p4.add(ageDayL);
 
-		phoneL = new JLabel("ÀüÈ­¹øÈ£");
+		phoneL = new JLabel("ì „í™”ë²ˆí˜¸");
 		tel2T = new JTextField(5);
 		tel3T = new JTextField(5);
 		JPanel p5 = new JPanel();
@@ -89,7 +85,7 @@ public class MembershipB extends JFrame {
 		emailL = new JLabel("e-mail");
 		emailT = new JTextField(10);
 		emailcomL = new JLabel("@");
-		emailB = new JButton("Àü¼Û");
+		emailB = new JButton("ì „ì†¡");
 		JPanel p6 = new JPanel();
 		p6.add(emailL);
 		p6.add(emailT);
@@ -97,16 +93,16 @@ public class MembershipB extends JFrame {
 		p6.add(emailC);
 		p6.add(emailB);
 
-		emailadductionL = new JLabel("e-mail ÀÎÁõ¹øÈ£");
+		emailadductionL = new JLabel("e-mail ì¸ì¦ë²ˆí˜¸");
 		emailadductionT = new JTextField(10);
-		emeilokB = new JButton("ÀÎÁõÈ®ÀÎ");
+		emeilokB = new JButton("ì¸ì¦í™•ì¸");
 		JPanel p7 = new JPanel();
 		p7.add(emailadductionL);
 		p7.add(emailadductionT);
 		p7.add(emeilokB);
 
-		joinB = new JButton("°¡ÀÔ");
-		calneB = new JButton("Ãë¼Ò");
+		joinB = new JButton("ê°€ì…");
+		calneB = new JButton("ì·¨ì†Œ");
 		JPanel p8 = new JPanel();
 		p8.add(joinB);
 		p8.add(calneB);
