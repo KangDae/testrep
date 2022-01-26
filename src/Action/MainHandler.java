@@ -457,29 +457,11 @@ public class MainHandler extends Thread {
 
 					}
 
-					String folder = "C:\\Users\\Administrator\\Desktop\\java\\Java_CooProject-master (2)\\testrep\\roomFolder\\"
-							+ priRoom.getrID() + "\\";
-					System.out.println(folder);
-					// 폴더명으로 파일객체 생성
-					File file = new File(folder);
-
-					// 폴더라면 폴더가 가진 파일객체를 리스트로 받는다.
-					File[] list = file.listFiles();
-
-					String fileList = "";
-					// 리스트에서 파일을 하나씩 꺼낸다
-					for (File f : list) {
-						// 파일일 경우만 출력
-						if (f.isFile()) {
-							fileList += (f.getName() + "%");
-						}
-						System.out.println();
-					}
-					System.out.println("FileList : " + fileList);
+				
 
 					for (int i = 0; i < roomtotalList.get(index).roomInUserList.size(); i++) {
 						roomtotalList.get(index).roomInUserList.get(i).pw.println(Protocol.ENTERROOM_USERLISTSEND + "|"
-								+ roomMember + "|" + user.getIdName() + "님이 입장하셨습니다.|" + fileList);
+								+ roomMember + "|" + user.getIdName() + "님이 입장하셨습니다.|");
 						roomtotalList.get(index).roomInUserList.get(i).pw.flush();
 					}
 

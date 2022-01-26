@@ -44,7 +44,7 @@ public class EnterFrame extends JFrame implements ActionListener, Runnable, List
 	private BufferedReader br;
 	private PrintWriter pw;
 
-	MembershipB menbersShipF; // 회원가입
+	MembershipB menbersShipF; // 회원가입1
 	SearchidB searchF; // ID 찾기
 	SearchpwB searchpwF; // PASSWORD 찾기
 	RoomFrame RoomF; // 대기실
