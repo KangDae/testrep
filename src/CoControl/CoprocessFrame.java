@@ -26,11 +26,6 @@ import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.ListSelectionModel;
 
-/**
- * @author ����
- * @category �� ���γ���
- *
- */
 
 public class CoprocessFrame extends JFrame {
 

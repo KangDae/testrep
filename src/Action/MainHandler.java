@@ -56,7 +56,7 @@ public class MainHandler extends Thread {
 	public void run() {
 		// 데이터 입력받음 데이터파싱 -> 결과 실행해줘야함
 		try {
-
+			OutputStream output = null;
 			String[] line = null;
 			while (true) {
 				line = br.readLine().split("\\|");
@@ -394,8 +394,10 @@ public class MainHandler extends Thread {
 						waitUserList.get(i).pw.flush();
 					}
 
-					String path = "C:\\eclipse\\WorkSpace\\CooProject\\roomFolder\\" + priNumber;
+					String path = "C:\\Users\\Administrator\\Desktop\\java\\Java_CooProject-master (2)\\testrep\\roomFolder\\"
+							+ priNumber;
 					File folder = new File(path);
+					
 
 					if (folder.exists()) {
 						try {
@@ -406,6 +408,7 @@ public class MainHandler extends Thread {
 					} else if (!folder.exists()) {
 						folder.mkdir();
 						System.out.println("폴더가 생성되었습니다.");
+						output = new FileOutputStream(folder.getPath() + "/chattinglog.txt");
 					}
 
 				} else if (line[0].compareTo(Protocol.ENTERROOM) == 0) { // [방 입장버튼]
@@ -454,7 +457,8 @@ public class MainHandler extends Thread {
 
 					}
 
-					String folder = "C:\\eclipse\\WorkSpace\\CooProject\\roomFolder\\" + priRoom.getrID() + "\\";
+					String folder = "C:\\Users\\Administrator\\Desktop\\java\\Java_CooProject-master (2)\\testrep\\roomFolder\\"
+							+ priRoom.getrID() + "\\";
 					System.out.println(folder);
 					// 폴더명으로 파일객체 생성
 					File file = new File(folder);
@@ -508,7 +512,7 @@ public class MainHandler extends Thread {
 							if (roomtotalList.get(i).roomInUserList.size() == 1) // 나올 자기가 마지막일 때.
 							{
 								System.out.println("나올때 내가 마지막일때");
-								roomtotalList.remove(priRoom);
+								// roomtotalList.remove(priRoom);
 								priRoom = new Room();
 								con = false;
 
@@ -587,8 +591,11 @@ public class MainHandler extends Thread {
 					for (int i = 0; i < roomUserSize; i++) {
 						roomtotalList.get(roomtotalList.indexOf(priRoom)).roomInUserList.get(i).pw
 								.println(Protocol.CHATTINGSENDMESSAGE_OK + "|" + user.getIdName() + "|" + line[1]); // 채팅방
-																													// 사람들에게
-																													// 메세지
+						// 사람들에게
+						// 메세지
+						byte[] messagelog = ("["+user.getIdName()+"]" + line[1]+"\n").getBytes();
+						output.write(messagelog);
+						//메세지보내기호우
 						roomtotalList.get(roomtotalList.indexOf(priRoom)).roomInUserList.get(i).pw.flush();
 					}
 
@@ -610,8 +617,8 @@ public class MainHandler extends Thread {
 
 					// 저장할 파일출력스트림 객체 생성
 
-					String path = "C:\\eclipse\\WorkSpace\\CooProject\\roomFolder\\" + priRoom.getrID() + "\\"
-							+ fileName;
+					String path = "C:\\Users\\Administrator\\Desktop\\java\\Java_CooProject-master (2)\\testrep\\roomFolder\\"
+							+ priRoom.getrID() + "\\" + fileName;
 
 					FileOutputStream fos = new FileOutputStream(path);
 
@@ -636,7 +643,8 @@ public class MainHandler extends Thread {
 					fos.close();
 					System.out.println("파일 다운로드 끝 !!!");
 
-					String folder = "C:\\eclipse\\WorkSpace\\CooProject\\roomFolder\\" + priRoom.getrID() + "\\";
+					String folder = "C:\\Users\\Administrator\\Desktop\\java\\Java_CooProject-master (2)\\testrep\\roomFolder\\"
+							+ priRoom.getrID() + "\\";
 					// 폴더명으로 파일객체 생성
 					File file = new File(folder);
 
@@ -664,7 +672,8 @@ public class MainHandler extends Thread {
 
 				} else if (line[0].compareTo(Protocol.CHATTINGFILEDOWNLOAD_SYN) == 0) // 파일 다운로드 보냄
 				{
-					String folder = "C:\\eclipse\\WorkSpace\\CooProject\\roomFolder\\" + priRoom.getrID() + "\\";
+					String folder = "C:\\Users\\Administrator\\Desktop\\java\\Java_CooProject-master (2)\\testrep\\roomFolder\\"
+							+ priRoom.getrID() + "\\";
 					// 폴더명으로 파일객체 생성
 					File file = new File(folder);
 
