@@ -373,6 +373,7 @@ public class MainHandler extends Thread {
 																												// 바로
 																												// 채팅화면으로
 							waitUserList.get(i).pw.println(Protocol.ROOMMAKE_OK1 + "|" + tempRoom.getMasterName());
+							waitUserList.get(i).pw.println(Protocol.ROOMMAKE_OK + "|" + roomListMessage);
 							waitUserList.get(i).pw.flush();
 						} else { // 다른 대기방사람들에게는 대기방만 새로고침
 							waitUserList.get(i).pw.println(Protocol.ROOMMAKE_OK + "|" + roomListMessage);
@@ -408,7 +409,7 @@ public class MainHandler extends Thread {
 					} else if (!folder.exists()) {
 						folder.mkdir();
 						System.out.println("폴더가 생성되었습니다.");
-						output = new FileOutputStream(folder.getPath() + "/chattinglog.txt");
+						//output = new FileOutputStream(folder.getPath() + "/chattinglog.txt");
 					}
 
 				} else if (line[0].compareTo(Protocol.ENTERROOM) == 0) { // [방 입장버튼]
@@ -451,8 +452,8 @@ public class MainHandler extends Thread {
 							waitUserList.get(i).pw.println(Protocol.ENTERROOM_OK1 + "|" + "message");
 							waitUserList.get(i).pw.flush();
 						} else { // 다른 대기방사람들에게는 대기방만 새로고침
-							waitUserList.get(i).pw.println(Protocol.ROOMMAKE_OK + "|" + roomListMessage); // 룸리스트 새로고침
-							waitUserList.get(i).pw.flush();
+						waitUserList.get(i).pw.println(Protocol.ROOMMAKE_OK + "|" + roomListMessage); // 룸리스트 새로고침
+						waitUserList.get(i).pw.flush();
 						}
 
 					}
@@ -494,6 +495,7 @@ public class MainHandler extends Thread {
 							if (roomtotalList.get(i).roomInUserList.size() == 1) // 나올 자기가 마지막일 때.
 							{
 								System.out.println("나올때 내가 마지막일때");
+								roomtotalList.get(i).roomInUserList.remove(this);
 								// roomtotalList.remove(priRoom);
 								priRoom = new Room();
 								con = false;
@@ -575,8 +577,8 @@ public class MainHandler extends Thread {
 								.println(Protocol.CHATTINGSENDMESSAGE_OK + "|" + user.getIdName() + "|" + line[1]); // 채팅방
 						// 사람들에게
 						// 메세지
-						byte[] messagelog = ("["+user.getIdName()+"]" + line[1]+"\n").getBytes();
-						output.write(messagelog);
+						//byte[] messagelog = ("["+user.getIdName()+"]" + line[1]+"\n").getBytes();
+						//output.write(messagelog);
 						//메세지보내기호우
 						roomtotalList.get(roomtotalList.indexOf(priRoom)).roomInUserList.get(i).pw.flush();
 					}
@@ -716,4 +718,5 @@ public class MainHandler extends Thread {
 			e.printStackTrace();
 		}
 	}
+
 }

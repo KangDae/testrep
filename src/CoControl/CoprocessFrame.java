@@ -26,6 +26,8 @@ import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.ListSelectionModel;
 
+import CoControl.FrameDragListenerExample.FrameDragListener;
+
 
 public class CoprocessFrame extends JFrame {
 
@@ -38,6 +40,7 @@ public class CoprocessFrame extends JFrame {
 	private BufferedReader br;
 	private ArrayList<String> arr;
 	public DefaultListModel<String> model;
+	FrameDragListener frameDragListener;
 
 	public CoprocessFrame() {
 
@@ -137,6 +140,10 @@ public class CoprocessFrame extends JFrame {
 		setResizable(false);
 		setBounds(400, 200, 1000, 800);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
+		
+		
+	    frameDragListener = new FrameDragListener(this);
+		//this.setUndecorated(true);
 
 	}// 생성자
 

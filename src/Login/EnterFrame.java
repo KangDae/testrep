@@ -49,7 +49,7 @@ public class EnterFrame extends JFrame implements ActionListener, Runnable, List
 	SearchpwB searchpwF; // PASSWORD 찾기
 	RoomFrame RoomF; // 대기실
 	RoomMake rMakeF; // 방만들기
-	CoprocessFrame chattingF;
+	CoprocessFrame chattingF;// 채팅방
 
 	private String sNumber = "><^^"; // default 시크릿넘버
 	private boolean condition_S = false; // 이메일 인증확인
@@ -379,7 +379,7 @@ public class EnterFrame extends JFrame implements ActionListener, Runnable, List
 			this.setVisible(true);
 		} else if (e.getSource() == RoomF.exitB) { // 대기실 -> 로그인Page (로그아웃)
 
-			RoomF.setVisible(false);
+			RoomF.setVisible(true);
 			this.setVisible(true);
 
 			pw.println(Protocol.EXITWAITROOM + "|" + "message");
@@ -417,8 +417,8 @@ public class EnterFrame extends JFrame implements ActionListener, Runnable, List
 					pw.println(Protocol.ROOMMAKE + "|" + line);
 					pw.flush();
 
-//					rMakeF.setVisible(false);
-//					RoomF.setVisible(true);
+					rMakeF.setVisible(false);
+					RoomF.setVisible(true);
 
 					rMakeF.tf.setText("");
 					rMakeF.pf.setText("");
@@ -435,8 +435,8 @@ public class EnterFrame extends JFrame implements ActionListener, Runnable, List
 					pw.println(Protocol.ROOMMAKE + "|" + line);
 					pw.flush();
 
-//					rMakeF.setVisible(false);
-//					RoomF.setVisible(true);
+					rMakeF.setVisible(false);
+					RoomF.setVisible(true);
 					rMakeF.tf.setText("");
 					rMakeF.pf.setText("");
 					rMakeF.combo1.setSelectedIndex(0);
@@ -455,15 +455,16 @@ public class EnterFrame extends JFrame implements ActionListener, Runnable, List
 			rMakeF.combo.setSelectedIndex(0);
 			rMakeF.cb.setSelected(false);
 		} else if (e.getSource() == chattingF.exitB) { // 채팅방에서 나가기 버튼
-
-			chattingF.setVisible(false);
+			rMakeF.setVisible(true);
 			RoomF.setVisible(true);
+			chattingF.setVisible(false);
 			chattingF.model.removeAllElements();
 
 			pw.println(Protocol.EXITCHATTINGROOM + "|" + "Message");
 			pw.flush();
 
 			chattingF.partList.setText("asd");
+			RoomF.setVisible(true);
 
 		} else if (e.getSource() == chattingF.sendB) {
 			pw.println(Protocol.CHATTINGSENDMESSAGE + "|" + chattingF.field.getText()); // 메세지를 보냄
@@ -567,7 +568,7 @@ public class EnterFrame extends JFrame implements ActionListener, Runnable, List
 
 				} else if (line[0].compareTo(Protocol.ROOMMAKE_OK) == 0) // 방만들어짐
 				{
-					System.out.println("이거 되냐?");
+
 					String roomList[] = line[1].split("-"); // 방 갯수
 					for (int i = 0; i < roomList.length; i++) {
 						System.out.print(roomList[i] + "/");
@@ -592,6 +593,8 @@ public class EnterFrame extends JFrame implements ActionListener, Runnable, List
 							RoomF.dp[i].labelArray[5].setText(userNumber); // 인원수
 							RoomF.dp[i].labelArray[7].setText(roomListDetail[1]); // 방제목
 							RoomF.dp[i].labelArray[8].setText("개설자 : " + roomListDetail[4]); // 개설자
+
+							RoomF.setVisible(false);
 						} else if (roomListDetail.length == 7) // 공개방
 						{
 							userNumber += (roomListDetail[6] + "/" + roomListDetail[2]);
@@ -600,17 +603,20 @@ public class EnterFrame extends JFrame implements ActionListener, Runnable, List
 							RoomF.dp[i].labelArray[5].setText(userNumber); // 인원수
 							RoomF.dp[i].labelArray[7].setText(roomListDetail[1]); // 방제목
 							RoomF.dp[i].labelArray[8].setText("개설자 : " + roomListDetail[3]); // 개설자
+							RoomF.setVisible(false);
+						} else {
+							RoomF.setVisible(false);
 						}
 						System.out.println("userNumber : " + userNumber);
 
 					}
+					
 					chattingF.area.setText("");
 					chattingF.area1.setText("");
-					rMakeF.setVisible(false); // 대기방 화면 끄고
-					RoomF.setVisible(true);
 
 				} else if (line[0].compareTo(Protocol.ROOMMAKE_OK1) == 0) // 방만들어짐 (만든 당사자) // 입장
 				{
+					RoomF.setVisible(false);
 					rMakeF.setVisible(false); // 대기방 화면 끄고
 					chattingF.area.setText("");
 					chattingF.setVisible(true);
